@@ -6,13 +6,23 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <style>
-    html, body {
-        margin: 0;
-    }
+        html, body {
+            margin: 0;
+        }
+        .screen-wrapper {
+            box-sizing: border-box;
+            height: 100%;
+            overflow: hidden;
+            width: 100%;
+        }
+        video { height: 100%;}
+
     </style>
 </head>
 <body>
-    <video id="video" width="100%" height="100%" muted playsinline autoplay></video>
+    <div id="screen-wrapper">
+        <video id="video" class="screen" muted playsinline autoplay></video>
+    </div>
     <script>
         (async () => {
             const constraints = { 
