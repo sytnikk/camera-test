@@ -7,14 +7,13 @@
     <title>Document</title>
 </head>
 <body>
-    <video id="video"></video>
+    <video id="video" muted playsinline autoplay></video>
     <script>
         (async () => {
             const constraints = { 
                 audio: false, 
                 video: {
-                    width: 640,
-                    height: 480
+                    facingMode: "user"
                 },
             };
 
