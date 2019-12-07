@@ -13,19 +13,20 @@
     window.extAsyncInit = function () {
         MessengerExtensions.getUserID(function success(uids) {
             var psid = uids.psid;
-            alert(psid);
+            document.write(psid);
         }, function error(err) {
-            alert("Messenger Extension Error: " + err);
+            document.write("Messenger Extension Error: " + err);
         });
         MessengerExtensions.getContext(ID, 
           function success(thread_context){
             alert(thread_context.psid);
             alert(thread_context.tid);
-            alert(thread_context.thread_type);
+            document.write(thread_context.thread_type);
             alert(thread_context.signed_request);
           },
           function error(err){
-            alert("Messenger Extension Error: " + err);
+                        document.write(thread_context.thread_type);
+("Messenger Extension Error: " + err);
           }
         );
     };
