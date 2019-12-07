@@ -6,27 +6,19 @@
       var js, fjs = d.getElementsByTagName(s)[0];
       if (d.getElementById(id)) {return;}
       js = d.createElement(s); js.id = id;
-      js.src = "//connect.facebook.net/en_US/messenger.Extensions.js";
+      js.src = "https://connect.facebook.com/en_US/messenger.Extensions.js";
       fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'Messenger'));
-    alert('qqq!')
     window.extAsyncInit = function () {
-        MessengerExtensions.getUserID(function success(uids) {
-            var psid = uids.psid;
-            document.write(psid);
-        }, function error(err) {
-            document.write("Messenger Extension Error: " + err);
-        });
+        var isSupported = MessengerExtensions.isInExtension(); 
+        document.write(isSupported);
+        // the Messenger Extensions JS SDK is done loading
         MessengerExtensions.getContext(ID, 
-          function success(thread_context){
-            alert(thread_context.psid);
-            alert(thread_context.tid);
-            document.write(thread_context.thread_type);
-            alert(thread_context.signed_request);
+          function success(result){
+            document.write("Success: "+JSON.stringify(result));
           },
-          function error(err){
-                        document.write(thread_context.thread_type);
-("Messenger Extension Error: " + err);
+          function error(result){
+            document.write(JSON.stringify(result));
           }
         );
     };
