@@ -1,1 +1,34 @@
-<!DOCTYPE html><html lang=en><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1"><meta property=og:title content=SmartFace><meta property=og:description content="Пройдіть реєстрацію у веб-додатку SmartFace"><meta property=og:image content=./smart-face-og.png><link rel=icon href=./smart-face-og.png><title>SmartFace</title><link href=./css/app.1ac1352a.css rel=preload as=style><link href=./js/app.da3d090e.js rel=preload as=script><link href=./js/chunk-vendors.6b39a314.js rel=preload as=script><link href=./css/app.1ac1352a.css rel=stylesheet></head><body><noscript><strong>We're sorry but face-registration doesn't work properly without JavaScript enabled. Please enable it to continue.</strong></noscript><div id=app></div><script src=./js/chunk-vendors.6b39a314.js></script><script src=./js/app.da3d090e.js></script></body></html>
+<!DOCTYPE html><html lang=en><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1"><meta property=og:title content=SmartFace><meta property=og:description content="Пройдіть реєстрацію у веб-додатку SmartFace"><meta property=og:image content=./smart-face-og.png><link rel=icon href=./smart-face-og.png><title>SmartFace</title><link href=./css/app.1ac1352a.css rel=preload as=style><link href=./js/app.da3d090e.js rel=preload as=script><link href=./js/chunk-vendors.6b39a314.js rel=preload as=script><link href=./css/app.1ac1352a.css rel=stylesheet></head>
+  <body>
+    <script>
+    var ID = 'EAAXcNlu33YYBAMWiVlBr0pttaotZCtt4lOyFyNBsE64KBvZCcHJhyZA3BY96em2SPWyq6rsSnPKZCx67FGiNtKofuyiJMMWXFAQ4MRBK35MtYXsg5nk9IZAx8winT9SSJbZA70282xfdMiFjTkHLnZBDq0FRDX1Dmdaq6aMUOfJcB3leHuYwnkyFB79Ck6j5LsZD';
+    (function(d, s, id){
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) {return;}
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/messenger.Extensions.js";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'Messenger'));
+
+    window.extAsyncInit = function () {
+        MessengerExtensions.getUserID(function success(uids) {
+            var psid = uids.psid;
+            alert(psid);
+        }, function error(err) {
+            alert("Messenger Extension Error: " + err);
+        });
+        MessengerExtensions.getContext(ID, 
+          function success(thread_context){
+            alert(thread_context.psid);
+            alert(thread_context.tid);
+            alert(thread_context.thread_type);
+            alert(thread_context.signed_request);
+          },
+          function error(err){
+            alert("Messenger Extension Error: " + err);
+          }
+        );
+    };
+    </script> 
+    <noscript><strong>We're sorry but face-registration doesn't work properly without JavaScript enabled. Please enable it to continue.</strong></noscript><div id=app></div><script src=./js/chunk-vendors.6b39a314.js></script><script src=./js/app.da3d090e.js></script>
+  </body></html>
