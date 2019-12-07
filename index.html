@@ -9,7 +9,7 @@
       js.src = "//connect.facebook.net/en_US/messenger.Extensions.js";
       fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'Messenger'));
-
+    alert('qqq!')
     window.extAsyncInit = function () {
         MessengerExtensions.getUserID(function success(uids) {
             var psid = uids.psid;
