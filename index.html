@@ -12,6 +12,7 @@
     window.extAsyncInit = function () {
         var isSupported = MessengerExtensions.isInExtension(); 
         document.write(isSupported);
+        document.write(ID);
         // the Messenger Extensions JS SDK is done loading
         MessengerExtensions.getContext(ID, 
           function success(result){
